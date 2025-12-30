@@ -1,0 +1,49 @@
+body {
+  font-family: "Anonymous Pro", monospace;
+  background-color: black;
+}
+
+.testing {
+  clip-path: path(
+    "M 50% 0% C 65% 0%, 85% 0%, 100% 0% L 100% 43% C 90% 65%, 75% 90%, 67% 100% L 32% 100% C 25% 90%, 10% 65%, 0% 43% L 0% 0% C 15% 0%, 35% 0%, 50% 0% Z"
+  );
+}
+
+/* CSS */
+.button-52 {
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid #c1ff72;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #c1ff72;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+  background-color: #86d123;
+  border: 1px solid #86d123;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+}
