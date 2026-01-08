@@ -14,7 +14,7 @@ function TitlePage() {
   const bottomY = useTransform(scrollY, [0, 400], [0, 40]);
 
   return (
-    <section className="relative w-full min-h-screen py-20 flex flex-col items-center overflow-hidden">
+    <section id="titlePage" className="relative w-full min-h-screen py-20 flex flex-col items-center overflow-hidden">
       {/* CENTER HERO */}
       <div className="flex-grow w-full flex items-center justify-center">
         <div className="flex w-full items-center justify-center gap-6 px-6">
@@ -23,7 +23,7 @@ function TitlePage() {
             src={dots}
             alt=""
             style={{ y: dotsY }}
-            className="hidden lg:block max-w-[120px] opacity-80"
+            className="hidden lg:block max-w-30 opacity-80"
           />
 
           {/* TITLE */}
@@ -33,7 +33,7 @@ function TitlePage() {
           >
             <SplitText
               text="ACADEMIC"
-              className="block text-7xl md:text-8xl px-2 text-shadow-lg text-shadow-black"
+              className="block text-5xl md:text-8xl px-2 text-shadow-lg text-shadow-black "
               delay={80}
               duration={0.6}
               ease="power3.out"
@@ -48,7 +48,7 @@ function TitlePage() {
             <span className="block">
               <SplitText
                 text="DISHONESTY THROUGH"
-                className="block text-6xl md:text-8xl text-shadow-lg text-shadow-black"
+                className="block text-5xl md:text-8xl text-shadow-lg text-shadow-black"
                 delay={80}
                 duration={0.6}
                 ease="power3.out"
@@ -64,7 +64,7 @@ function TitlePage() {
             <span className="block">
               <SplitText
                 text="CODE PLAGIARISM"
-                className="block text-6xl md:text-8xl px-2 text-shadow-lg text-shadow-black"
+                className="block text-5xl md:text-8xl px-2 text-shadow-lg text-shadow-black "
                 delay={80}
                 duration={0.6}
                 ease="power3.out"
@@ -91,12 +91,12 @@ function TitlePage() {
       {/* BOTTOM CTA */}
       <motion.div
         style={{ y: bottomY }}
-        className="w-full flex items-center justify-between px-10 pb-6"
+        className="w-full flex items-center justify-center md:justify-between px-10 pb-6"
       >
         <img src={leftSide} alt="" className="hidden md:block h-40" />
 
         <motion.button
-          className="button-52 text-xl font-medium text-black
+          className="button-52 text-xl font-medium text-black/70
                      focus:outline-none focus:ring-4 hover:text-white cursor-target focus:ring-[#C1FF72]/50"
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}

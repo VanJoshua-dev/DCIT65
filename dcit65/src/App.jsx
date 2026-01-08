@@ -1,16 +1,41 @@
 import "./App.css";
+import { useState, useEffect } from "react";
 import MainContainer from "./main-container";
-import "@fontsource/anonymous-pro";
+// Supports weights 100-900
+import "@fontsource-variable/inter";
 import TargetCursor from "./components/TargetCursor";
+import Testing from "./testing-ui";
+import { Routes, Route } from "react-router-dom";
 function App() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  () => {
+    // Check if user is using a mouse or large screen
+    const checkDevice = () => {
+      const isWide = window.innerWidth > 1024; // You can adjust breakpoint
+      const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+      setIsDesktop(isWide && hasFinePointer);
+    };
+
+    checkDevice(); // Run on mount
+    window.addEventListener("resize", checkDevice);
+    return () => window.removeEventListener("resize", checkDevice);
+  },
+    [];
   return (
     <>
-      <TargetCursor
-        spinDuration={2}
-        hideDefaultCursor={true}
-        parallaxOn={true}
-      />
-      <MainContainer />
+      {/* <MainContainer /> */}
+
+      <Routes>
+        {isDesktop && (
+          <TargetCursor
+            spinDuration={2}
+            hideDefaultCursor={true}
+            parallaxOn={true}
+          />
+        )}
+        <Route path="/" element={<Testing />} />
+      </Routes>
     </>
   );
 }
