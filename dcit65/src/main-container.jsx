@@ -81,10 +81,10 @@ function Testing() {
               {/* Socials */}
               <div className="flex gap-4 mt-5 ">
                 <a className="p-2 rounded-full bg-white/5 hover:bg-cyan-400/20 transition">
-                  <Facebook className="h-6 w-6 text-white cursor-pointer" />
+                  <Facebook className="h-6 w-6 text-white cursor-target" />
                 </a>
-                <a className="p-2 rounded-full bg-white/5 cursor-pointer hover:bg-cyan-400/20 transition">
-                  <PiTiktokLogo  className="h-6 w-6 text-white" />
+                <a className="p-2 rounded-full bg-white/5  hover:bg-cyan-400/20 transition">
+                  <PiTiktokLogo  className="h-6 w-6 text-white cursor-target" />
                 </a>
               </div>
             </div>

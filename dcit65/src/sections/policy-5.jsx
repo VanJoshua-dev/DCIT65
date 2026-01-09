@@ -50,7 +50,7 @@ function Policy5() {
       {/* Main Content */}
       <motion.main
         variants={container}
-        className="px-10 py-2 flex flex-col gap-4 overflow-y-auto w-full"
+        className="px-4 md:px-10 lg:px-10 py-2 flex flex-col gap-4 overflow-y-auto w-full"
       >
         {/* Top 3 Columns */}
         <div className="flex flex-col lg:flex-row gap-3">
@@ -86,7 +86,7 @@ function Policy5() {
                   key={i}
                   variants={item}
                   whileHover={{ scale: 1.03 }}
-                  className="px-3 py-3 border-l-4 border rounded-lg cursor-pointer"
+                  className="px-3 py-3 border-l-4 border rounded-lg cursor-target"
                 >
                   <h1 className="text-white font-medium">{card.title}</h1>
                   <p className="text-gray-400">{card.text}</p>
@@ -123,7 +123,7 @@ function Policy5() {
                   key={i}
                   variants={item}
                   whileHover={{ scale: 1.03 }}
-                  className="px-3 py-3 border-l-4 border-red-500 bg-[#121a2f] rounded-lg cursor-pointer"
+                  className="px-3 py-3 border-l-4 border-red-500 bg-[#121a2f] rounded-lg cursor-target"
                 >
                   <h1 className="text-white font-medium">{card.title}</h1>
                   <p className="text-gray-400">{card.text}</p>
@@ -153,7 +153,8 @@ function Policy5() {
                 <motion.li
                   key={i}
                   variants={item}
-                  className="flex flex-row gap-2 px-3 py-3 bg-green-400/50 rounded-lg"
+                  whileHover={{ scale: 1.03 }}
+                  className="flex flex-row gap-2 px-3 py-3 bg-green-400/50 rounded-lg cursor-target"
                 >
                   <Check className="text-green-400" /> {text}
                 </motion.li>

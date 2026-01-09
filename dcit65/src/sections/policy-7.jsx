@@ -71,10 +71,10 @@ function Policy7() {
         </p>
       </motion.header>
 
-      {/* Main Content */}
+      {/* Main Content */} 
       <motion.main
         variants={container}
-        className="px-10 py-2 flex flex-col gap-4 overflow-y-auto w-full"
+        className="px-4 md:px-10 lg:px-10  py-2 flex flex-col gap-4 overflow-y-auto w-full"
       >
         <div className="relative w-full max-w-4xl mx-auto py-10 px-4 sm:px-0">
           {/* Vertical line */}

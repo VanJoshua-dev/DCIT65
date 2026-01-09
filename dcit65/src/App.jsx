@@ -24,15 +24,12 @@ function App() {
   return (
     <>
       {/* <MainContainer /> */}
-
+      <TargetCursor
+        spinDuration={2}
+        hideDefaultCursor={true}
+        parallaxOn={true}
+      />
       <Routes>
-        {isDesktop && (
-          <TargetCursor
-            spinDuration={2}
-            hideDefaultCursor={true}
-            parallaxOn={true}
-          />
-        )}
         <Route path="/" element={<Testing />} />
       </Routes>
     </>

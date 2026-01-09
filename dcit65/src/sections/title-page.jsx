@@ -14,7 +14,10 @@ function TitlePage() {
   const bottomY = useTransform(scrollY, [0, 400], [0, 40]);
 
   return (
-    <section id="titlePage" className="relative w-full min-h-screen py-20 flex flex-col items-center overflow-hidden">
+    <section
+      id="titlePage"
+      className="relative w-full min-h-screen py-20 flex flex-col items-center overflow-hidden"
+    >
       {/* CENTER HERO */}
       <div className="flex-grow w-full flex items-center justify-center">
         <div className="flex w-full items-center justify-center gap-6 px-6">

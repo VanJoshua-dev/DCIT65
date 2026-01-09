@@ -71,7 +71,7 @@ function Header() {
             <img
               src={logo}
               alt="Logo"
-              className="h-11 cursor-pointer"
+              className="h-11 cursor-pointer cursor-target"
               onClick={() => handleScrollTo("titlePage")}
             />
 
@@ -87,7 +87,7 @@ function Header() {
             <nav className="hidden md:block">
               <ul className="flex items-center gap-8 text-md font-medium">
                 <li onClick={() => handleScrollTo("intro")}>
-                  <span className={`${isActive("intro")} cursor-pointer`}>
+                  <span className={`${isActive("intro")} cursor-pointer cursor-target`}>
                     Introduction
                   </span>
                 </li>
@@ -96,7 +96,7 @@ function Header() {
                 <li className="relative">
                   <button
                     onClick={() => setIsPoliciesDropdownOpen((prev) => !prev)}
-                    className={`flex items-center gap-1 ${
+                    className={`flex items-center gap-1 cursor-pointer cursor-target ${
                       isPolicyActive
                         ? "text-[#C1FF72]"
                         : "text-white/80 hover:text-[#C1FF72]"
@@ -128,7 +128,7 @@ function Header() {
                           <div
                             key={policy.id}
                             onClick={() => handleScrollTo(policy.id)}
-                            className={`px-4 py-2 cursor-pointer ${
+                            className={`px-4 py-2 cursor-pointer cursor-target ${
                               activeSection === policy.id
                                 ? "text-[#C1FF72] bg-white/10"
                                 : "text-white/80 hover:text-[#C1FF72] hover:bg-white/10"

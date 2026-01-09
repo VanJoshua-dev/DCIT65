@@ -50,12 +50,12 @@ function Policy6() {
       {/* Main Content */}
       <motion.main
         variants={container}
-        className="px-10 py-2 flex flex-col gap-4 overflow-y-auto w-full"
+        className="px-4 md:px-10 lg:px-10 py-2 flex flex-col gap-4 overflow-y-auto w-full"
       >
         {/* Top */}
         <motion.div
           variants={item}
-          className="px-3 py-3 border-l-4 border-[#3b82f6] bg-[#121a2f] rounded-lg cursor-pointer"
+          className="px-3 py-3 border-l-4 border-[#3b82f6] bg-[#121a2f] rounded-lg cursor-target"
         >
           <h1 className="text-white font-medium">
             Always include a clear AI disclosure in your submission.
@@ -72,7 +72,7 @@ function Policy6() {
         >
           <motion.div
             variants={container}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-2 lg:gap-2"
           >
             {[
               {
@@ -100,7 +100,7 @@ function Policy6() {
                 key={i}
                 variants={item}
                 whileHover={{ scale: 1.05 }}
-                className="px-3 py-3 border-l-4 relative border bg-[#121a2f]/70 rounded-lg cursor-pointer"
+                className="px-3 py-3 border-l-4 relative border bg-[#121a2f]/70 rounded-lg cursor-target"
               >
                 <span className=" absolute -top-4 text-xs text-white font-medium px-4 py-1 bg-purple-500 rounded-full">
                   STEP {card.step}
