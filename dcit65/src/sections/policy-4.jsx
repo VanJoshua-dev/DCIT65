@@ -20,10 +20,10 @@ const item = {
   },
 };
 
-function Policy2() {
+function Policy4() {
   return (
     <motion.div
-      id="policy2"
+      id="policy4"
       className="min-h-screen w-screen py-20 flex flex-col gap-4 overflow-hidden"
       initial="hidden"
       whileInView="show"
@@ -35,15 +35,15 @@ function Policy2() {
         variants={item}
         className="px-10 py-3 bg-black/70 flex flex-col w-full"
       >
-        <p className="text-white">Policy #2</p>
+        <p className="text-white">Policy #4</p>
         <h1 className="text-2xl text-white font-semibold">
-          Responsible Sharing of Assignments
+          Security and Contribution Transparency
         </h1>
         <p className="text-white text-md">
-          Maintain the safety of your workplace. Unless your instructor
-          specifically authorizes it, do not share completed assignments.
-          Protecting your code ensures fairness, prevents plagiarism, and
-          fosters an environment of trust and accountability.
+          Great projects are built on genuine collaboration. Clearly document
+          your contributions and use version control to monitor progress. This
+          policy ensures fair grading, transparency, and recognition of all team
+          members' efforts.
         </p>
       </motion.header>
 
@@ -54,20 +54,32 @@ function Policy2() {
       >
         {/* Top 3 Columns */}
         <div className="flex flex-col lg:flex-row gap-3">
-          {/* Intellectual Property */}
+          {/* Acceptable Use of AI Tools */}
           <motion.div
             variants={item}
             className="px-4 py-4 rounded-lg bg-[#121a2f]/70 border border-white flex-1"
           >
             <h1 className="text-white text-center font-semibold mb-3">
-              WHAT IS CONSIDERED CONFIDENTIAL ACADEMIC DATA
+              WHAT COUNTS AS A CONTRIBUTION
             </h1>
 
             <motion.div variants={container} className="flex flex-col gap-2">
               {[
                 {
-                  title: "Assignments & Projects",
-                  text: "Homework, projects, and submissions intended for individual assessment.",
+                  title: "Code Development",
+                  text: "Writing, modifying, or refactoring source code for the project.",
+                },
+                {
+                  title: "Design & Architecture",
+                  text: "Planning system structure, UI/UX layouts, or application flow.",
+                },
+                {
+                  title: "Testing & Debugging",
+                  text: "Identifying bugs, testing features, and improving reliability.",
+                },
+                {
+                  title: "Documentation",
+                  text: "Writing reports, READMEs, or contribution summaries.",
                 },
               ].map((card, i) => (
                 <motion.div
@@ -89,22 +101,26 @@ function Policy2() {
             className="px-4 py-4 rounded-lg bg-[#121a2f]/70 border border-white flex-1"
           >
             <h1 className="text-white text-center font-semibold mb-3">
-              UNACCEPTABLE ACADEMIC PRACTICES
+              UNACCEPTABLE PRACTICES
             </h1>
 
             <motion.div variants={container} className="flex flex-col gap-2">
               {[
                 {
-                  title: "Sharing Assignments",
-                  text: "Giving your completed work to classmates without instructor approval.",
+                  title: "Free Riding",
+                  text: "Claiming credit without making meaningful contributions.",
                 },
                 {
-                  title: "Posting Work Online",
-                  text: "Uploading assignments to public platforms or group chats.",
+                  title: "False Contribution Reports",
+                  text: "Misrepresenting or exaggerating individual work.",
                 },
                 {
-                  title: "Reusing Others’ Submissions",
-                  text: "Submitting shared or leaked academic work.",
+                  title: "Shared Credentials",
+                  text: "Using one account for multiple members in version control systems.",
+                },
+                {
+                  title: "Untracked Changes",
+                  text: "Making edits outside approved version control tools.",
                 },
               ].map((card, i) => (
                 <motion.div
@@ -120,13 +136,13 @@ function Policy2() {
             </motion.div>
           </motion.div>
 
-          {/* Consequences */}
+          {/* WHY TRANSPARENCY MATTERS */}
           <motion.div
             variants={item}
-            className="px-4 py-4 rounded-lg bg-red-400/70 border border-white flex-1"
+            className="px-4 py-4 rounded-lg bg-[#334155]/70 border border-white flex-1"
           >
             <h1 className="text-white text-center font-semibold mb-3">
-              POSSIBLE CONSEQUENCES OF VIOLATIONS
+              WHY TRANSPARENCY MATTERS
             </h1>
 
             <motion.ul
@@ -134,9 +150,10 @@ function Policy2() {
               className="text-white flex flex-col gap-2 list-none"
             >
               {[
-                "Compromised fairness that gives some students an unfair academic advantage",
-                "Increased risk of plagiarism and misuse of your work",
-                "Loss of trust and accountability within the learning environment",
+                "Prevents free riding and ensures equitable workload distribution",
+                "Supports fair and accurate grading",
+                "Encourages accountability and professional collaboration habits",
+                "Provides clear evidence of individual effort and progress",
               ].map((text, i) => (
                 <motion.li key={i} variants={item}>
                   • {text}
@@ -146,13 +163,13 @@ function Policy2() {
           </motion.div>
         </div>
 
-        {/* Acceptable Use */}
+        {/* STUDENT RESPONSIBILITIES*/}
         <motion.div
           variants={item}
           className="bg-green-500/70 py-3 px-4 rounded-lg border border-white"
         >
           <h1 className="text-white text-center font-semibold mb-3">
-            ACCEPTABLE AND ETHICAL USE
+            BEST PRACTICES FOR TRANSPARENT COLLABORATION
           </h1>
 
           <motion.div
@@ -161,12 +178,20 @@ function Policy2() {
           >
             {[
               {
-                title: "Respecting Boundaries",
-                text: "Not requesting or accepting others’ completed work.",
+                title: "Use Version Control",
+                text: "Track commits regularly using tools such as Git and GitHub.",
               },
               {
-                title: "Private Storage",
-                text: "Keeping your assignments in secure, personal repositories.",
+                title: "Write Clear Commit Messages",
+                text: "Describe what you changed and why.",
+              },
+              {
+                title: "Submit Honest Reports",
+                text: "Accurately document your individual contributions.",
+              },
+              {
+                title: "Respect Team Security",
+                text: "Protect repositories, credentials, and shared resources.",
               },
             ].map((card, i) => (
               <motion.div
@@ -187,15 +212,12 @@ function Policy2() {
           variants={item}
           className="bg-blue-500 text-white rounded-lg py-2 px-3"
         >
-          <b>
-            Protecting your work maintains a safe and fair academic environment.
-          </b>{" "}
-          Only share assignments when authorized and uphold trust and
-          accountability.
+          <b>Transparency builds trust and stronger teams.</b> Document your
+          work, secure your tools, and collaborate responsibly.
         </motion.footer>
       </motion.main>
     </motion.div>
   );
 }
 
-export default Policy2;
+export default Policy4;

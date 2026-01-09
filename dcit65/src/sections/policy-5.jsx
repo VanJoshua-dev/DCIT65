@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import { Check } from "lucide-react";
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -20,10 +20,10 @@ const item = {
   },
 };
 
-function Policy2() {
+function Policy5() {
   return (
     <motion.div
-      id="policy2"
+      id="policy5"
       className="min-h-screen w-screen py-20 flex flex-col gap-4 overflow-hidden"
       initial="hidden"
       whileInView="show"
@@ -35,15 +35,15 @@ function Policy2() {
         variants={item}
         className="px-10 py-3 bg-black/70 flex flex-col w-full"
       >
-        <p className="text-white">Policy #2</p>
+        <p className="text-white">Policy #5</p>
         <h1 className="text-2xl text-white font-semibold">
-          Responsible Sharing of Assignments
+          Understanding of the Project
         </h1>
         <p className="text-white text-md">
-          Maintain the safety of your workplace. Unless your instructor
-          specifically authorizes it, do not share completed assignments.
-          Protecting your code ensures fairness, prevents plagiarism, and
-          fosters an environment of trust and accountability.
+          Don't just submit a code and own it. Prepare to explain how your
+          program works with reflections or oral defenses. Understanding your
+          code builds confidence, improves problem solving skills, and
+          demonstrates that your work is truly yours.
         </p>
       </motion.header>
 
@@ -54,27 +54,39 @@ function Policy2() {
       >
         {/* Top 3 Columns */}
         <div className="flex flex-col lg:flex-row gap-3">
-          {/* Intellectual Property */}
+          {/* Acceptable Use of AI Tools */}
           <motion.div
             variants={item}
-            className="px-4 py-4 rounded-lg bg-[#121a2f]/70 border border-white flex-1"
+            className="px-4 py-4 rounded-lg bg-[#334155]/70 border border-white flex-1"
           >
             <h1 className="text-white text-center font-semibold mb-3">
-              WHAT IS CONSIDERED CONFIDENTIAL ACADEMIC DATA
+              WHY UNDERSTANDING MATTERS
             </h1>
 
             <motion.div variants={container} className="flex flex-col gap-2">
               {[
                 {
-                  title: "Assignments & Projects",
-                  text: "Homework, projects, and submissions intended for individual assessment.",
+                  title: "Real Learning",
+                  text: "Demonstrating understanding ensures programming concepts are truly learned, not memorized or copied.",
+                },
+                {
+                  title: "Problem-Solving Skills",
+                  text: "Explaining your logic strengthens analytical thinking and debugging ability.",
+                },
+                {
+                  title: "Confidence & Ownership",
+                  text: "Knowing your code builds confidence and shows responsibility for your work.",
+                },
+                {
+                  title: "Documentation",
+                  text: "Writing reports, READMEs, or contribution summaries.",
                 },
               ].map((card, i) => (
                 <motion.div
                   key={i}
                   variants={item}
                   whileHover={{ scale: 1.03 }}
-                  className="px-3 py-3 border-l-4 border-[#3b82f6] bg-[#121a2f] rounded-lg cursor-pointer"
+                  className="px-3 py-3 border-l-4 border rounded-lg cursor-pointer"
                 >
                   <h1 className="text-white font-medium">{card.title}</h1>
                   <p className="text-gray-400">{card.text}</p>
@@ -89,22 +101,22 @@ function Policy2() {
             className="px-4 py-4 rounded-lg bg-[#121a2f]/70 border border-white flex-1"
           >
             <h1 className="text-white text-center font-semibold mb-3">
-              UNACCEPTABLE ACADEMIC PRACTICES
+              UNACCEPTABLE PRACTICES
             </h1>
 
             <motion.div variants={container} className="flex flex-col gap-2">
               {[
                 {
-                  title: "Sharing Assignments",
-                  text: "Giving your completed work to classmates without instructor approval.",
+                  title: "Blind Code Submission",
+                  text: "Submitting code you cannot explain or justify.",
                 },
                 {
-                  title: "Posting Work Online",
-                  text: "Uploading assignments to public platforms or group chats.",
+                  title: "Memorized Explanations",
+                  text: "Repeating explanations without real comprehension.",
                 },
                 {
-                  title: "Reusing Others’ Submissions",
-                  text: "Submitting shared or leaked academic work.",
+                  title: "Copied Logic",
+                  text: "Relying on others’ work without understanding how it functions",
                 },
               ].map((card, i) => (
                 <motion.div
@@ -120,13 +132,12 @@ function Policy2() {
             </motion.div>
           </motion.div>
 
-          {/* Consequences */}
           <motion.div
             variants={item}
-            className="px-4 py-4 rounded-lg bg-red-400/70 border border-white flex-1"
+            className="px-4 py-4 rounded-lg bg-[#121a2f]/70 border border-white flex-1"
           >
             <h1 className="text-white text-center font-semibold mb-3">
-              POSSIBLE CONSEQUENCES OF VIOLATIONS
+              HOW TO PREPARE
             </h1>
 
             <motion.ul
@@ -134,68 +145,34 @@ function Policy2() {
               className="text-white flex flex-col gap-2 list-none"
             >
               {[
-                "Compromised fairness that gives some students an unfair academic advantage",
-                "Increased risk of plagiarism and misuse of your work",
-                "Loss of trust and accountability within the learning environment",
+                "Review your code line by line and understand its purpose",
+                "Practice explaining your logic in simple terms",
+                "Be ready for oral defense or written reflection",
+                "Ensure your submission reflects your own understanding",
               ].map((text, i) => (
-                <motion.li key={i} variants={item}>
-                  • {text}
+                <motion.li
+                  key={i}
+                  variants={item}
+                  className="flex flex-row gap-2 px-3 py-3 bg-green-400/50 rounded-lg"
+                >
+                  <Check className="text-green-400" /> {text}
                 </motion.li>
               ))}
             </motion.ul>
           </motion.div>
         </div>
 
-        {/* Acceptable Use */}
-        <motion.div
-          variants={item}
-          className="bg-green-500/70 py-3 px-4 rounded-lg border border-white"
-        >
-          <h1 className="text-white text-center font-semibold mb-3">
-            ACCEPTABLE AND ETHICAL USE
-          </h1>
-
-          <motion.div
-            variants={container}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2"
-          >
-            {[
-              {
-                title: "Respecting Boundaries",
-                text: "Not requesting or accepting others’ completed work.",
-              },
-              {
-                title: "Private Storage",
-                text: "Keeping your assignments in secure, personal repositories.",
-              },
-            ].map((card, i) => (
-              <motion.div
-                key={i}
-                variants={item}
-                whileHover={{ scale: 1.05 }}
-                className="px-3 py-3 border-l-4 border-green-400 bg-green-400/50 rounded-lg cursor-pointer"
-              >
-                <h1 className="text-white font-medium text-lg">{card.title}</h1>
-                <p className="text-gray-200">{card.text}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-
         {/* Footer */}
         <motion.footer
           variants={item}
-          className="bg-blue-500 text-white rounded-lg py-2 px-3"
+          className="bg-blue-500 text-white rounded-lg font-medium py-2 px-3"
         >
-          <b>
-            Protecting your work maintains a safe and fair academic environment.
-          </b>{" "}
-          Only share assignments when authorized and uphold trust and
-          accountability.
+          Understanding your code builds confidence, improves problem-solving
+          skills, and proves that your work is truly yours.
         </motion.footer>
       </motion.main>
     </motion.div>
   );
 }
 
-export default Policy2;
+export default Policy5;

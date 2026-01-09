@@ -7,6 +7,11 @@ import LetterGlitch from "./components/LetterGlitch";
 import PolicyPage from "./sections/policy-page";
 import Policy1 from "./sections/policy-1";
 import Policy2 from "./sections/policy-2";
+import Policy3 from "./sections/policy-3";
+import Policy4 from "./sections/policy-4";
+import Policy5 from "./sections/policy-5";
+import Policy6 from "./sections/policy-6";
+import Policy7 from "./sections/policy-7";
 
 function Testing() {
   return (
@@ -40,9 +45,19 @@ function Testing() {
         </div>
 
         <IntroPages />
+
+        {/* Policies */}
         <Policy1 />
         <Policy2 />
+        <Policy3 />
+        <Policy4 />
+        <Policy5 />
+        <Policy6 />
+        <Policy7 />
       </main>
+      <footer>
+        <h1 className="text-2xl text-white">Hello</h1>
+      </footer>
     </div>
   );
 }

@@ -20,10 +20,10 @@ const item = {
   },
 };
 
-function Policy2() {
+function Policy3() {
   return (
     <motion.div
-      id="policy2"
+      id="policy3"
       className="min-h-screen w-screen py-20 flex flex-col gap-4 overflow-hidden"
       initial="hidden"
       whileInView="show"
@@ -35,15 +35,15 @@ function Policy2() {
         variants={item}
         className="px-10 py-3 bg-black/70 flex flex-col w-full"
       >
-        <p className="text-white">Policy #2</p>
+        <p className="text-white">Policy #3</p>
         <h1 className="text-2xl text-white font-semibold">
-          Responsible Sharing of Assignments
+          Responsible Use of AI Tools
         </h1>
         <p className="text-white text-md">
-          Maintain the safety of your workplace. Unless your instructor
-          specifically authorizes it, do not share completed assignments.
-          Protecting your code ensures fairness, prevents plagiarism, and
-          fosters an environment of trust and accountability.
+          AI is a powerful learning partner but not a shortcut. Use AI tools to
+          understand, debug, and improve your code, not to replace your own
+          thinking. Learn smarter, stay ethical, and grow your real programming
+          skills.
         </p>
       </motion.header>
 
@@ -54,27 +54,39 @@ function Policy2() {
       >
         {/* Top 3 Columns */}
         <div className="flex flex-col lg:flex-row gap-3">
-          {/* Intellectual Property */}
+          {/* Acceptable Use of AI Tools */}
           <motion.div
             variants={item}
             className="px-4 py-4 rounded-lg bg-[#121a2f]/70 border border-white flex-1"
           >
             <h1 className="text-white text-center font-semibold mb-3">
-              WHAT IS CONSIDERED CONFIDENTIAL ACADEMIC DATA
+              ACCEPTABLE USE OF AI TOOLS
             </h1>
 
             <motion.div variants={container} className="flex flex-col gap-2">
               {[
                 {
-                  title: "Assignments & Projects",
-                  text: "Homework, projects, and submissions intended for individual assessment.",
+                  title: "Concept Clarification",
+                  text: "Using AI to explain programming concepts or syntax you do not understand.",
+                },
+                {
+                  title: "Debugging Assistance",
+                  text: "Asking AI to help identify errors while you remain responsible for the solution.",
+                },
+                {
+                  title: "Code Improvement",
+                  text: "Refining logic, readability, or efficiency of code you originally wrote.",
+                },
+                {
+                  title: "Learning Support",
+                  text: "Using AI as a study aid, not as a replacement for thinking or practice.",
                 },
               ].map((card, i) => (
                 <motion.div
                   key={i}
                   variants={item}
                   whileHover={{ scale: 1.03 }}
-                  className="px-3 py-3 border-l-4 border-[#3b82f6] bg-[#121a2f] rounded-lg cursor-pointer"
+                  className="px-3 py-3 border-l-4 border-green-500 bg-[#121a2f] rounded-lg cursor-pointer"
                 >
                   <h1 className="text-white font-medium">{card.title}</h1>
                   <p className="text-gray-400">{card.text}</p>
@@ -89,22 +101,26 @@ function Policy2() {
             className="px-4 py-4 rounded-lg bg-[#121a2f]/70 border border-white flex-1"
           >
             <h1 className="text-white text-center font-semibold mb-3">
-              UNACCEPTABLE ACADEMIC PRACTICES
+              UNACCEPTABLE USE OF AI
             </h1>
 
             <motion.div variants={container} className="flex flex-col gap-2">
               {[
                 {
-                  title: "Sharing Assignments",
-                  text: "Giving your completed work to classmates without instructor approval.",
+                  title: "Fully AI-Generated Submissions",
+                  text: "Submitting code or answers created entirely by AI without personal effort.",
                 },
                 {
-                  title: "Posting Work Online",
-                  text: "Uploading assignments to public platforms or group chats.",
+                  title: "Lack of Understanding",
+                  text: "Submitting work you cannot explain or justify when asked.",
                 },
                 {
-                  title: "Reusing Others’ Submissions",
-                  text: "Submitting shared or leaked academic work.",
+                  title: "Undisclosed AI Use",
+                  text: "Using AI tools without transparency when disclosure is required.",
+                },
+                {
+                  title: "Replacing Critical Thinking",
+                  text: "Relying on AI instead of developing problem-solving skills.",
                 },
               ].map((card, i) => (
                 <motion.div
@@ -120,13 +136,13 @@ function Policy2() {
             </motion.div>
           </motion.div>
 
-          {/* Consequences */}
+          {/* WHY RESPONSIBLE AI USE MATTERS */}
           <motion.div
             variants={item}
-            className="px-4 py-4 rounded-lg bg-red-400/70 border border-white flex-1"
+            className="px-4 py-4 rounded-lg bg-[#064E3B]/70 border border-white flex-1"
           >
             <h1 className="text-white text-center font-semibold mb-3">
-              POSSIBLE CONSEQUENCES OF VIOLATIONS
+              WHY RESPONSIBLE AI USE MATTERS
             </h1>
 
             <motion.ul
@@ -134,9 +150,10 @@ function Policy2() {
               className="text-white flex flex-col gap-2 list-none"
             >
               {[
-                "Compromised fairness that gives some students an unfair academic advantage",
-                "Increased risk of plagiarism and misuse of your work",
-                "Loss of trust and accountability within the learning environment",
+                "Misuse of AI undermines academic integrity and fairness",
+                "Overreliance prevents development of critical problem-solving skills",
+                "Lack of accountability weakens preparation for real-world IT environments",
+                "Ethical AI use builds transparency, trust, and technical confidence",
               ].map((text, i) => (
                 <motion.li key={i} variants={item}>
                   • {text}
@@ -146,13 +163,13 @@ function Policy2() {
           </motion.div>
         </div>
 
-        {/* Acceptable Use */}
+        {/* STUDENT RESPONSIBILITIES*/}
         <motion.div
           variants={item}
           className="bg-green-500/70 py-3 px-4 rounded-lg border border-white"
         >
           <h1 className="text-white text-center font-semibold mb-3">
-            ACCEPTABLE AND ETHICAL USE
+            STUDENT RESPONSIBILITIES
           </h1>
 
           <motion.div
@@ -161,12 +178,20 @@ function Policy2() {
           >
             {[
               {
-                title: "Respecting Boundaries",
-                text: "Not requesting or accepting others’ completed work.",
+                title: "Understand Your Work",
+                text: "Ensure you can explain and defend any code you submit.",
               },
               {
-                title: "Private Storage",
-                text: "Keeping your assignments in secure, personal repositories.",
+                title: "Use AI as a Guide",
+                text: "Let AI support your thinking, not replace it.",
+              },
+              {
+                title: "Practice Honesty",
+                text: "Be transparent about AI use when required by your instructor.",
+              },
+              {
+                title: "Take Ownership",
+                text: "Submit work that reflects your own learning and effort.",
               },
             ].map((card, i) => (
               <motion.div
@@ -187,15 +212,13 @@ function Policy2() {
           variants={item}
           className="bg-blue-500 text-white rounded-lg py-2 px-3"
         >
-          <b>
-            Protecting your work maintains a safe and fair academic environment.
-          </b>{" "}
-          Only share assignments when authorized and uphold trust and
-          accountability.
+          <b>Learn smarter, stay ethical, and grow real programming skills.</b>{" "}
+          Responsible AI use prepares you for accountable, real-world IT
+          practice.
         </motion.footer>
       </motion.main>
     </motion.div>
   );
 }
 
-export default Policy2;
+export default Policy3;
