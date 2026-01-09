@@ -139,7 +139,7 @@ function Policy3() {
           {/* WHY RESPONSIBLE AI USE MATTERS */}
           <motion.div
             variants={item}
-            className="px-4 py-4 rounded-lg bg-[#064E3B]/70 border border-white flex-1"
+            className="px-4 py-4 rounded-lg bg-[#334155]/70 border border-white flex-1"
           >
             <h1 className="text-white text-center font-semibold mb-3">
               WHY RESPONSIBLE AI USE MATTERS
