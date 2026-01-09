@@ -1,10 +1,9 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import MainContainer from "./main-container";
 // Supports weights 100-900
 import "@fontsource-variable/inter";
 import TargetCursor from "./components/TargetCursor";
-import Testing from "./testing-ui";
+import Testing from "./main-container";
 import { Routes, Route } from "react-router-dom";
 function App() {
   const [isDesktop, setIsDesktop] = useState(false);
