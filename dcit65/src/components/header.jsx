@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import logo from "../assets/logoSuperFinal.png";
+import { Menu, X } from "lucide-react";
 
 function Header() {
   const [isPoliciesDropdownOpen, setIsPoliciesDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("titlePage");
-
-  const togglePoliciesDropdown = () => {
-    setIsPoliciesDropdownOpen((prev) => !prev);
-  };
 
   const navSections = [
     { id: "titlePage", title: "Title", type: "main" },
@@ -27,6 +25,7 @@ function Header() {
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
       setIsPoliciesDropdownOpen(false);
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -40,7 +39,6 @@ function Header() {
     .some((s) => s.id === activeSection);
 
   /* -------------------- Scroll Spy -------------------- */
-
   useEffect(() => {
     const handleScrollSpy = () => {
       const scrollPos = window.scrollY + window.innerHeight / 3;
@@ -61,105 +59,122 @@ function Header() {
 
     window.addEventListener("scroll", handleScrollSpy);
     return () => window.removeEventListener("scroll", handleScrollSpy);
-  }, []);
+  }, [navSections]);
 
   /* -------------------- Render -------------------- */
-
   return (
-    <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-black/30 border-b border-white/10">
-      <div className="mx-auto max-w-7xl px-6 lg:px-16">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <img
-            src={logo}
-            alt="Logo"
-            className="h-8 cursor-pointer"
-            onClick={() => handleScrollTo("title")}
-          />
+    <>
+      <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-black/30 border-b border-white/10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-16">
+          <div className="flex h-16 items-center justify-between">
+            {/* Logo */}
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-11 cursor-pointer"
+              onClick={() => handleScrollTo("titlePage")}
+            />
 
-          {/* Navigation */}
-          <nav>
-            <ul className="flex items-center gap-8 text-md font-medium">
-              {/* Introduction */}
-              <li onClick={() => handleScrollTo("intro")}>
-                <span
-                  className={`${isActive(
-                    "intro"
-                  )} transition-colors cursor-pointer`}
-                >
-                  Introduction
-                </span>
-              </li>
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden text-white"
+              onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
 
-              {/* Policies Dropdown */}
-              <li className="relative">
-                <button
-                  onClick={togglePoliciesDropdown}
-                  className={`flex items-center gap-1 transition-colors ${
-                    isPolicyActive
-                      ? "text-[#C1FF72]"
-                      : "text-white/80 hover:text-[#C1FF72]"
-                  }`}
-                >
-                  Policies
-                  <svg
-                    className={`w-4 h-4 transition-transform ${
-                      isPoliciesDropdownOpen ? "rotate-180" : ""
+            {/* Desktop Navigation */}
+            <nav className="hidden md:block">
+              <ul className="flex items-center gap-8 text-md font-medium">
+                <li onClick={() => handleScrollTo("intro")}>
+                  <span className={`${isActive("intro")} cursor-pointer`}>
+                    Introduction
+                  </span>
+                </li>
+
+                {/* Policies Dropdown */}
+                <li className="relative">
+                  <button
+                    onClick={() => setIsPoliciesDropdownOpen((prev) => !prev)}
+                    className={`flex items-center gap-1 ${
+                      isPolicyActive
+                        ? "text-[#C1FF72]"
+                        : "text-white/80 hover:text-[#C1FF72]"
                     }`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
+                    Policies
+                    <svg
+                      className={`w-4 h-4 transition-transform ${
+                        isPoliciesDropdownOpen ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
 
-                {isPoliciesDropdownOpen && (
-                  <div className="absolute top-full mt-2 w-64 bg-black/90 border border-white/10 rounded-md shadow-lg">
-                    <ul className="py-2">
+                  {isPoliciesDropdownOpen && (
+                    <div className="absolute top-full mt-2 w-64 bg-black/90 border border-white/10 rounded-md">
                       {navSections
                         .filter((s) => s.type === "policy")
                         .map((policy) => (
-                          <li
+                          <div
                             key={policy.id}
                             onClick={() => handleScrollTo(policy.id)}
+                            className={`px-4 py-2 cursor-pointer ${
+                              activeSection === policy.id
+                                ? "text-[#C1FF72] bg-white/10"
+                                : "text-white/80 hover:text-[#C1FF72] hover:bg-white/10"
+                            }`}
                           >
-                            <span
-                              className={`block px-4 py-2 cursor-pointer transition-colors ${
-                                activeSection === policy.id
-                                  ? "text-[#C1FF72] bg-white/10"
-                                  : "text-white/80 hover:text-[#C1FF72] hover:bg-white/10"
-                              }`}
-                            >
-                              {policy.title}
-                            </span>
-                          </li>
+                            {policy.title}
+                          </div>
                         ))}
-                    </ul>
-                  </div>
-                )}
-              </li>
+                    </div>
+                  )}
+                </li>
 
-              {/* Citation Guide */}
-              <li onClick={() => handleScrollTo("citation-guide")}>
-                <span
-                  className={`${isActive(
-                    "citation-guide"
-                  )} transition-colors cursor-pointer`}
-                >
-                  Citation Guide
-                </span>
-              </li>
-            </ul>
-          </nav>
+                <li onClick={() => handleScrollTo("citation-guide")}>
+                  <span
+                    className={`${isActive("citation-guide")} cursor-pointer`}
+                  >
+                    Citation Guide
+                  </span>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed top-16 z-40 w-full bg-black/95 border-t border-white/10">
+          <ul className="flex flex-col px-6 py-4 space-y-4">
+            {navSections.map((item) => (
+              <li
+                key={item.id}
+                onClick={() => handleScrollTo(item.id)}
+                className={`cursor-pointer ${
+                  activeSection === item.id
+                    ? "text-[#C1FF72]"
+                    : "text-white/80 hover:text-[#C1FF72]"
+                }`}
+              >
+                {item.title}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </>
   );
 }
 

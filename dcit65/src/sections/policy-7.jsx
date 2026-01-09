@@ -76,34 +76,38 @@ function Policy7() {
         variants={container}
         className="px-10 py-2 flex flex-col gap-4 overflow-y-auto w-full"
       >
-        <div className="relative w-full mx-auto py-10">
+        <div className="relative w-full max-w-4xl mx-auto py-10 px-4 sm:px-0">
           {/* Vertical line */}
-          <div className="absolute left-5 top-0 h-full border-l-2 border-dashed border-cyan-400/40" />
+          <div className="absolute left-4 sm:left-5 top-0 h-full border-l-2 border-dashed border-cyan-400/40" />
 
-          <div className="space-y-10">
-            {timelineData.map((item, index) => {
-              const Icon = item.icon;
+          <motion.div variants={container} className="space-y-10">
+            {timelineData.map((data, index) => {
+              const Icon = data.icon;
 
               return (
-                <div key={index} className="relative flex gap-6">
-                  {/* Icon circle */}
-                  <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-yellow-400 shadow-lg">
-                    <Icon className="h-5 w-5 text-black" />
+                <motion.div
+                  key={index}
+                  variants={item}
+                  className="relative flex gap-4 sm:gap-6 items-start"
+                >
+                  {/* Icon */}
+                  <div className="relative z-10 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-yellow-400 shadow-lg flex-shrink-0">
+                    <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-black" />
                   </div>
 
                   {/* Content */}
-                  <div>
-                    <h3 className="text-xl font-semibold text-cyan-400">
-                      {item.title}
+                  <div className="pt-0.5">
+                    <h3 className="text-lg sm:text-xl font-semibold text-cyan-400">
+                      {data.title}
                     </h3>
-                    <p className="mt-1 text-sm text-gray-300 leading-relaxed">
-                      {item.description}
+                    <p className="mt-1 text-sm text-gray-300 leading-relaxed max-w-prose">
+                      {data.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
         {/* Center 2 Columns */}
         <div className="flex flex-col lg:flex-row gap-3">
