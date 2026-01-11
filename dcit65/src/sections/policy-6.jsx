@@ -68,49 +68,60 @@ function Policy6() {
 
         <motion.div
           variants={item}
-          className="bg-[#121a2f]/70 py-8 px-4 rounded-lg border border-white"
+          className="relative bg-[#121a2f]/70 py-10 px-6 rounded-lg border border-white"
         >
+          {/* Vertical Line */}
+          <div className="absolute left-6 top-10 bottom-10 w-[2px] bg-purple-500/50" />
+
           <motion.div
             variants={container}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-2 lg:gap-2"
+            className="flex flex-col gap-10 pl-10"
           >
             {[
               {
-                step: 1,
+                step: "STEP 1",
                 title: "Acknowledge AI Use",
-                text: "State clearly if AI tools were used at any stage of development.",
+                text: "Clearly state if AI tools were used at any point in the development process.",
               },
               {
-                step: 2,
+                step: "STEP 2",
                 title: "Explain the Assistance",
-                text: "Describe how AI helped (debugging, explanations, optimization).",
+                text: "Describe how AI helped (debugging, explanations, optimization, or learning support).",
               },
               {
-                step: 3,
+                step: "STEP 3",
                 title: "Reflect on Learning",
-                text: "Explain what you learned and how AI supported and not replaced your thinking.",
+                text: "Explain what concepts you learned and how AI supported — not replaced — your thinking.",
               },
               {
-                step: 4,
+                step: "STEP 4",
                 title: "Take Ownership",
-                text: "Confirm that the final submission represents your own work and understanding.",
+                text: "Confirm that the final output reflects your own effort, understanding, and responsibility.",
               },
-            ].map((card, i) => (
+            ].map((item, i) => (
               <motion.div
                 key={i}
                 variants={item}
-                whileHover={{ scale: 1.05 }}
-                className="px-3 py-3 border-l-4 relative border bg-[#121a2f]/70 rounded-lg cursor-target"
+                whileHover={{ scale: 1.02 }}
+                className="relative bg-[#020617] border border-purple-500/40 rounded-lg px-5 py-4"
               >
-                <span className=" absolute -top-4 text-xs text-white font-medium px-4 py-1 bg-purple-500 rounded-full">
-                  STEP {card.step}
+                {/* Timeline Dot */}
+                <span className="absolute -left-[34px] top-5 w-4 h-4 rounded-full bg-purple-500 border-2 border-white" />
+
+                {/* Badge */}
+                <span className="inline-block mb-2 text-xs font-semibold px-3 py-1 rounded-full bg-purple-500/90 text-white">
+                  {item.step}
                 </span>
-                <h1 className="text-white font-medium text-lg">{card.title}</h1>
-                <p className="text-gray-200">{card.text}</p>
+
+                <h3 className="text-white font-semibold text-lg">
+                  {item.title}
+                </h3>
+                <p className="text-gray-300 text-sm">{item.text}</p>
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
+
         {/* Center 2 Columns */}
         <div className="flex flex-col lg:flex-row gap-3">
           {/* RESPONSIBLE PRACTICES */}
