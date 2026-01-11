@@ -71,42 +71,54 @@ function Policy7() {
         </p>
       </motion.header>
 
-      {/* Main Content */} 
+      {/* Main Content */}
       <motion.main
         variants={container}
         className="px-4 md:px-10 lg:px-10  py-2 flex flex-col gap-4 overflow-y-auto w-full"
       >
-        <div className="relative w-full max-w-4xl mx-auto py-10 px-4 sm:px-0">
-          {/* Vertical line */}
-          <div className="absolute left-4 sm:left-5 top-0 h-full border-l-2 border-dashed border-cyan-400/40" />
+        <div className="relative w-full  mx-auto py-10 px-4 sm:px-0">
 
-          <motion.div variants={container} className="space-y-10">
-            {timelineData.map((data, index) => {
-              const Icon = data.icon;
+          <motion.div
+            variants={item}
+            className="bg-[#121a2f]/70 w-full py-8 px-4 rounded-lg border border-white"
+          >
+            <motion.div
+              variants={container}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5"
+            >
+              {timelineData.map((data, index) => {
+                const Icon = data.icon;
 
-              return (
-                <motion.div
-                  key={index}
-                  variants={item}
-                  className="relative flex gap-4 sm:gap-6 items-start"
-                >
-                  {/* Icon */}
-                  <div className="relative z-10 flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-yellow-400 shadow-lg flex-shrink-0">
-                    <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-black" />
-                  </div>
+                return (
+                  <motion.div
+                    key={index}
+                    variants={item}
+                    whileHover={{ scale: 1.05 }}
+                    className="relative px-4 py-4 bg-[#020617] border-l-4 border-cyan-400 rounded-lg"
+                  >
+                    {/* STEP Badge */}
+                    <span className="absolute -top-4 left-4 text-xs font-semibold px-4 py-1 bg-cyan-400 text-black rounded-full">
+                      STEP {index + 1}
+                    </span>
 
-                  {/* Content */}
-                  <div className="pt-0.5">
-                    <h3 className="text-lg sm:text-xl font-semibold text-cyan-400">
-                      {data.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-gray-300 leading-relaxed max-w-prose">
+                    {/* Icon */}
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-400 text-black shadow">
+                        <Icon className="h-4 w-4" />
+                      </div>
+                      <h3 className="text-white font-semibold text-lg">
+                        {data.title}
+                      </h3>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm text-gray-300 leading-relaxed">
                       {data.description}
                     </p>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  </motion.div>
+                );
+              })}
+            </motion.div>
           </motion.div>
         </div>
         {/* Center 2 Columns */}
