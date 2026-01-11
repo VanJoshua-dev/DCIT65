@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import dots from "../assets/dots.png";
 import leftSide from "../assets/design-left.png";
 import rightSide from "../assets/design-right.png";
 import SplitText from "../components/SplitText";
+import IntegrityQuizModal from "./quiz";
 
 function TitlePage() {
   const { scrollY } = useScroll();
@@ -13,11 +14,16 @@ function TitlePage() {
   const titleY = useTransform(scrollY, [0, 400], [0, -80]);
   const bottomY = useTransform(scrollY, [0, 400], [0, 40]);
 
+  const [openQuiz, setOpenQuiz] = useState(false);
   return (
     <section
       id="titlePage"
       className="relative w-full min-h-screen py-20 flex flex-col items-center overflow-hidden"
     >
+      <IntegrityQuizModal
+  isOpen={openQuiz}
+  onClose={() => setOpenQuiz(false)}
+/>
       {/* CENTER HERO */}
       <div className="flex-grow w-full flex items-center justify-center">
         <div className="flex w-full items-center justify-center gap-6 px-6">
@@ -103,6 +109,7 @@ function TitlePage() {
                      focus:outline-none focus:ring-4 hover:text-white cursor-target focus:ring-[#C1FF72]/50"
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
+          onClick={() => setOpenQuiz(true)}
         >
           Find Out What You Know
         </motion.button>

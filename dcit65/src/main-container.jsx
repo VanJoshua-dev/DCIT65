@@ -14,7 +14,8 @@ import Policy6 from "./sections/policy-6";
 import Policy7 from "./sections/policy-7";
 import Poster from "./assets/poster.png";
 import { Github, Mail, Linkedin, Globe, Facebook } from "lucide-react";
-import { PiTiktokLogo } from "react-icons/pi"
+import { PiTiktokLogo } from "react-icons/pi";
+import CitationGuide from "./sections/citation-guide";
 
 function Testing() {
   return (
@@ -57,6 +58,7 @@ function Testing() {
         <Policy5 />
         <Policy6 />
         <Policy7 />
+        <CitationGuide />
       </main>
       <footer className="relative bg-[#020617] border-t border-white/10">
         {/* Glow effect */}
@@ -84,7 +86,7 @@ function Testing() {
                   <Facebook className="h-6 w-6 text-white cursor-target" />
                 </a>
                 <a className="p-2 rounded-full bg-white/5  hover:bg-cyan-400/20 transition">
-                  <PiTiktokLogo  className="h-6 w-6 text-white cursor-target" />
+                  <PiTiktokLogo className="h-6 w-6 text-white cursor-target" />
                 </a>
               </div>
             </div>
@@ -96,10 +98,9 @@ function Testing() {
           {/* Bottom */}
           <div className="flex flex-col md:flex-row items-center justify-between text-sm text-gray-400 gap-4">
             <p>
-              © {new Date().getFullYear()} Ethical IT Use Policy and Awareness Campaign. All
-              rights reserved.
+              © {new Date().getFullYear()} Ethical IT Use Policy and Awareness
+              Campaign. All rights reserved.
             </p>
-            
           </div>
         </div>
       </footer>
