@@ -143,7 +143,7 @@ function Header() {
 
                 <li onClick={() => handleScrollTo("citation-guide")}>
                   <span
-                    className={`${isActive("citation-guide")} cursor-pointer`}
+                    className={`${isActive("citation-guide")} cursor-pointer cursor-target`}
                   >
                     Citation Guide
                   </span>
