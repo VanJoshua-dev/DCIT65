@@ -77,7 +77,6 @@ function Policy7() {
         className="px-4 md:px-10 lg:px-10  py-2 flex flex-col gap-4 overflow-y-auto w-full"
       >
         <div className="relative w-full  mx-auto py-10 px-4 sm:px-0">
-
           <motion.div
             variants={item}
             className="bg-[#121a2f]/70 w-full py-8 px-4 rounded-lg border border-white"
@@ -94,7 +93,7 @@ function Policy7() {
                     key={index}
                     variants={item}
                     whileHover={{ scale: 1.05 }}
-                    className="relative px-4 py-4 bg-[#020617] border-l-4 border-cyan-400 rounded-lg"
+                    className="relative px-4 py-4 bg-[#020617] border-l-4 border-cyan-400 rounded-lg cursor-target"
                   >
                     {/* STEP Badge */}
                     <span className="absolute -top-4 left-4 text-xs font-semibold px-4 py-1 bg-cyan-400 text-black rounded-full">
