@@ -82,10 +82,10 @@ function Testing() {
 
               {/* Socials */}
               <div className="flex gap-4 mt-5 ">
-                <a className="p-2 rounded-full bg-white/5 hover:bg-cyan-400/20 transition">
+                <a href="https://www.facebook.com/profile.php?id=61586610926832" className="p-2 rounded-full bg-white/5 hover:bg-cyan-400/20 transition">
                   <Facebook className="h-6 w-6 text-white cursor-target" />
                 </a>
-                <a className="p-2 rounded-full bg-white/5  hover:bg-cyan-400/20 transition">
+                <a href="https://www.tiktok.com/@your.ezio?_r=1&_d=secCgYIASAHKAESPgo8hosL48RPN0rQNtM33H2uHzEapv64JcN8pMJ0fsWmS8yo%2BYXnCAwKI2scnzWMc1d9O8SWUmSxO9enxQsvGgA%3D&_svg=1&checksum=65e96e6988cd2ba366f594be4f5455598b152c5bbe82680b0327f348a46f3ea3&item_author_type=1&sec_uid=MS4wLjABAAAA0jMfghTujtwD1emqLMjXV4i2gpvj6f4JlX-g2nH-EVNYbzF-uIRMXDYJWyIqloN8&sec_user_id=MS4wLjABAAAA0jMfghTujtwD1emqLMjXV4i2gpvj6f4JlX-g2nH-EVNYbzF-uIRMXDYJWyIqloN8&share_app_id=1180&share_author_id=6797867029275018242&share_link_id=c8fde60f-d5f6-4931-b91a-4f60c94dafc6&share_region=PH&share_scene=1&sharer_language=en&social_share_type=5&source=h5_t&timestamp=1768278079&u_code=db4cdlb84eegeh&ug_btm=b8727%2Cb7360&ugbiz_name=ACCOUNT&user_id=6797867029275018242" className="p-2 rounded-full bg-white/5  hover:bg-cyan-400/20 transition">
                   <PiTiktokLogo className="h-6 w-6 text-white cursor-target" />
                 </a>
               </div>
